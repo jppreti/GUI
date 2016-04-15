@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+      
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+        }
+        
+        div.interna {
+            float: left;
+            border: 1px solid yellow;
+            min-width: 100px;
+            max-width: 150px;
+            height: 20%;
+            margin-left: 3%;
+            margin-bottom: 3%;
+        }
+        
+        div.toolbar {
+            width: 100%;
+            height: 70px;
+            border: 1px solid red;
+        }
+        
+        div.esquerda {
+            position: absolute;
+            left: 0px;
+            width: 200px;
+            height: 800px;
+            border: 1px solid red;
+        }
+        
+        div.direita {
+            position: absolute;
+            right: 0px;
+            width: 200px;
+            top: 70px;
+            height: 800px;
+            border: 1px solid black;
+        }
+                
+        div.centro {
+            margin-left: 200px;
+            margin-right: 200px;
+            border: 1px solid blue;
+            height: 70px;
+        }
+        
+        div.rodape {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 70px;
+            width: 100%;
+            background-color: white;
+            border: 1px solid blue;
+        }
+            
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">Toolbar</div>
+    <div class="esquerda">Esquerda 1</div>
+    <div class="centro">Centro 1</div>
+    <div class="centro">Centro 1</div>
+    <div class="centro">Centro 1</div>
+    <div class="centro">Centro 1</div>
+    <div class="direita">Direita</div>
+    <div class="rodape">Rodapé</div>
+</body>
+</html>

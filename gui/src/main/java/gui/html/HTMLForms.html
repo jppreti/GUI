@@ -1,0 +1,327 @@
+<!DOCTYPE HTML PUBLIC>
+<html>
+<head>
+<title>HTML Forms</title>
+</head>
+<body >
+    <form name="frm1" action="" method="get" autocomplete="on">
+        <label>Login:</label>
+        <input type="text" name="txtLogin"
+               placeholder="Digite seu login aqui!"
+               required="required" /><br />
+        
+        <label>Senha:</label>
+        <input type="password" name="txtSenha"
+               placeholder="Senha com letras e números, mínimo 6 caracteres!" minlength="6" maxlength="12" required />
+        <br />
+        
+        <label>Sexo:</label><br />
+        <input type="radio" name="rdbSexo" value="M" checked="checked">Masculino</input><br />
+        <input type="radio" name="rdbSexo" value="F">Feminino</input><br />
+
+        <label>Código do País:</label>
+        <input type="text" name="txtPais" pattern="[A-Z]{3}"
+               size="3" title="Digite o código do País com 3 caracteres maiúsculos." value="BRA" readonly="readonly" />
+        <br />
+        
+        <label>Veículos que possui:</label><br />
+        <input type="checkbox" name="chkBicicleta"
+               value="bicicleta">Tenho uma bicicleta.</input>
+        <br />
+        <input type="checkbox" name="chkCarro"
+               value="carro">Tenho um carro.</input>
+        <br />
+        <label>Estado:</label>
+        <select name="slcEstado">
+            <option value="MT">Mato Grosso</option>
+            <option value="SP" selected>São Paulo</option>
+            <option value="AM">Amazonas</option>
+        </select><br />
+
+        <label>Deixe suas sugestões aqui:</label><br />
+        <textarea name="txaSugestoes" cols="30" rows="10" maxlength="100">
+            Este é um local para digitar suas sugestões.
+        </textarea>
+        <br />
+
+        <input type="button" name="btnOla"
+               value="Pressione aqui!"
+               onclick="alert('Olá Mundo!!!')"
+               /><br />
+        
+        <label>Digite um número entre 1 e 5:</label>
+        <input type="number" name="txtNum" min="1" max="5" />
+        <br />
+
+        <label>Pontuação (0-100):</label>
+        <input type="number" name="txtPont" min="0" max="100"
+               value="50" step="10" />
+        <br />
+
+
+        <label>Navegadores:</label><br />
+        <input list="browsers" />
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <br />
+        
+        <label>Data de Nascimento:</label><br />
+        <input type="date" name="txtDtaNasc"
+               min="1970-01-01" max="2010-12-31" />
+
+        <label>Data de Nascimento (mes/ano):</label><br />
+        <input type="month" name="txtDtaNasc2" />
+        <br />
+
+        <label>Selecione uma semana :</label><br />
+        <input type="week" name="semana_ano" />
+        <br />
+    
+        <label>Horario:</label><br />
+        <input type="time" name="horario" />
+        <br />
+
+        <label>Data/hora com Fuso :</label><br />
+        <input type="datetime" name="datahora" />
+        <br />
+
+        <label>Data/hora sem Fuso :</label><br />
+        <input type="datetime-local" name="datahora" />
+        <br />
+    
+        <label>e-mail :</label><br />
+        <input type="email" name="txtEmail" />
+        <br />
+
+        <label>Telefone :</label><br />
+        <input type="tel" name="txtFone" />
+        <br />
+
+        <label>Busca :</label><br />
+        <input type="search" name="txtBusca" />
+        <br />
+
+        <label>Homepage :</label><br />
+        <input type="url" name="txtHomepage" />
+        <br />
+
+        <label>Selecione o arquivo para upload :</label><br />
+        <input type="file" name="fileUpload" />
+        <br />
+
+        <label>Selecione uma cor :</label><br />
+        <input type="color" name="colorUsuario" />
+        <br />
+
+        <label>Arraste para definir um valor:</label>
+        <input type="range" name="notaAluno" min="0"
+               max="10" />
+
+        <video width="320" height="240" controls autoplay>
+            <source src="movie.mp4" type="video/mp4">
+            <source src="movie.webm" type="video/webm">
+            <source src="movie.ogg" type="video/ogg">
+            Seu navegador não suporta a tag video.
+        </video>
+
+        <iframe width="420" height="315"
+                src="http://www.youtube.com/embed/XGSy3_Czz8k?                  autoplay=1">
+        </iframe>
+        
+        <audio controls>
+            <source src="horse.ogg" type="audio/ogg">
+            <source src="horse.wav" type="audio/wav">
+            <source src="horse.mp3" type="audio/mpeg">
+            Navegador não suporta a tag audio.
+        </audio>
+        
+        <object data="aqruivo.swf" width="400px" height="300px" /> 
+
+        <input type="submit" value="Enviar" />
+    </form>
+        
+    <form action=""
+        oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        0
+        <input type="range"  id="a" name="a" value="50">
+        100 +
+        <input type="number" id="b" name="b" value="50">
+        =
+        <output name="x" for="a b"></output>
+        <br><br>
+        <input type="submit">
+        <input type="reset">
+        <keygen name="security" />
+        
+    </form>    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        Nome:<br />
+        <input type="text" name="nome" placeholder="Primeiro nome" required><br />
+        Sobrenome:<br />
+        <input type="text" name="sobrenome" placeholder="Sobrenome"><br /><br />
+        
+        <input type="text" name="codigoPais" pattern="[A-Za-z]{3}" title="Codigo do Pais"><br /><br />
+        
+        Senha:
+        <input type="password" name="psw"><br /><br />
+        
+        <input type="radio" name="genero" value="masculino" checked> Masculino <br>
+        <input type="radio" name="genero" value="feminino"> Feminino <br>
+        <input type="radio" name="genero" value="outro"> Outro<br /><br />
+        
+        <input type="checkbox" name="veiculo1" value="Bicicleta"> Tenho uma bicicleta<br>
+        <input type="checkbox" name="veiculo2" value="Carro"> Tenho um carro<br /><br /> 
+        
+        <select name="carros">
+            <option value="volvo" selected>Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select><br /><br />
+        
+        <textarea name="mensagem" rows="10" cols="30">
+            Aqui posso colocar um texto com múltiplas linhas.
+        </textarea><br /><br />
+        
+        <button type="button" onclick="alert('Olá Mundo!')">Pressione aqui!</button><br /><br />
+        
+        <input list="browsers">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist><br /><br />
+        
+        Quantidade (entre 1 e 5):
+        <input type="number" name="quantidade" min="1" max="5"><br />
+        
+        Quantidade:
+        <input type="number" name="pontuacao" min="0" max="100" step="10" value="30"><br /><br />
+        
+        
+
+
+
+
+
+
+
+
+
+
+        Data de Nascimento:
+        <input type="date" name="dataNasc"><br />
+                
+        Entre com uma data antes de 1980-01-01:
+        <input type="date" name="datanasc" max="1979-12-31"><br>
+        Entre com uma data depois de 2000-01-01:
+        <input type="date" name="datanasc" min="2000-01-02"><br>
+        
+        Data de Nascimento (mes/ano):
+        <input type="month" name="dataNasc2"><br />
+        
+        Selecione uma semana:
+        <input type="week" name="semana_ano"><br />
+        
+        Selecione um horário:
+        <input type="time" name="horario"><br />
+        
+        Data de Nascimento (data/hora):
+        <input type="datetime" name="dataNasc3"><br />
+        
+        Data de Nascimento (data/hora):
+        <input type="datetime-local" name="dataNasc4"><br /><br />
+        
+        E-mail:
+        <input type="email" name="email"><br /><br />
+        
+        Search Google:
+        <input type="search" name="googlesearch"><br /><br />
+        
+        Telefone:
+        <input type="tel" name="usrtel"><br /><br />
+        
+        Homepage:
+        <input type="url" name="homepage"><br /><br />
+        
+        Selecionar imagem: <input type="file" name="img" multiple><br /><br />
+        
+        Selecione sua cor favorita:
+        <input type="color" name="favcolor"><br /><br />
+        
+        <input type="range" name="points" min="0" max="10"><br /><br />
+        
+        Encryption: <keygen name="security">
+        
+        
+    </form>
+    
+    <form action="pagina_resultado.html" method="get" autocomplete="off" novalidate>
+        <fieldset>
+            <legend>Informações Pessoais:</legend>
+            Nome:<br>
+            <input type="text" name="nome" value="Joao Paulo"><br>
+            Sobrenome:<br>
+            <input type="text" name="sobrenome" value="Preti"><br><br>
+            <input type="submit" value="Enviar">
+        </fieldset>
+    </form>
+    
+    <form action="pagina.html"
+        oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        0
+        <input type="range"  id="a" name="a" value="50">
+        100 +
+        <input type="number" id="b" name="b" value="50">
+        =
+        <output name="x" for="a b"></output>
+        <br><br>
+        <input type="submit">
+    </form>
+    
+    <video width="320" height="240" controls autoplay>
+        <source src="movie.mp4" type="video/mp4">
+        <source src="movie.webm" type="video/webm">
+        <source src="movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>     
+
+<iframe width="420" height="315"
+        src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1">
+</iframe> 
+
+<audio controls>
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="horse.wav" type="audio/wav">
+    <source src="horse.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio> 
+
+ <object width="400" height="50" data="bookmark.swf"></object> 
+  Para usar plugins do navegador.
+
+
+</body>
+</html>

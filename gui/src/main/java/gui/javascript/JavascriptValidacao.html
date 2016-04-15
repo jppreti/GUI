@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        
+        function validarSenha() {
+        
+            var txtSenha = document.getElementById("txtSenha");
+            var msgSenha = document.getElementById("msgSenha");
+            
+            if (txtSenha.value.length<6) {
+                msgSenha.style.color = "red";
+                txtSenha.style.border = "2px solid red";
+                msgSenha.innerHTML = "Senha Inválida!";
+            } else {
+                txtSenha.style.border = "1px solid black";
+                var contador = 0;
+                if (new RegExp("[a-z]").exec(txtSenha.value) != null) contador++;
+                if (new RegExp("[A-Z]").exec(txtSenha.value) != null) contador++;
+                if (new RegExp("[0-9]").exec(txtSenha.value) != null) contador++;   
+                
+                if (contador<=3) {
+                    msgSenha.innerHTML = "Senha Forte!";
+                    msgSenha.style.color = "green";
+                }
+                
+                if (contador<=2) {
+                    msgSenha.innerHTML = "Senha Regular!";
+                    msgSenha.style.color = "orange";
+                }
+                
+                if (contador<=1) {
+                    msgSenha.innerHTML = "Senha Fraca!";
+                    msgSenha.style.color = "red";
+                }
+            }
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <input type="text" style="border: 1px solid black;" id="txtSenha" onkeyup="validarSenha();" />
+    <span id="msgSenha" style="color:red;"></span>
+</body>

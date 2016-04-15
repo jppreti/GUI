@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript">
+        function transferir() {
+            var opcao = document.getElementById("txtOpcao").value;
+            var select = document.getElementById("slcOpcao");
+            var option = document.createElement("option");
+            option.value = opcao;
+            option.text = opcao;
+            select.appendChild(option);
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txtOpcao" />
+    <input type="button" value="+" onclick="transferir()" />
+    <select id="slcOpcao">
+    </select>
+</body>

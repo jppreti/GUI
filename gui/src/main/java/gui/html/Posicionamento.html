@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        
+        div.toolbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 75px;
+            border: 1px solid red;
+        }
+        
+        div.esquerda {
+            position: fixed;
+            left: 0;
+            top: 75px;
+            width: 25%;
+            height: 300px;
+            border: 1px solid red;
+        }
+        
+        div.direita {
+            position: fixed;
+            top: 75px;
+            right: 0;
+            width: 25%;
+            height: 200px;
+            border: 1px solid black;
+        }
+        
+        div:nth-child(4) {
+            margin-top: 75px;
+        }
+        
+        div.centro {
+            position: relative;
+            left: 25%;
+            width: 50%;            
+            height: 200px;
+            border: 1px solid green;
+        }
+        div.rodape {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 75px;
+            width: 100%;
+            border: 1px solid blue;
+        }
+            
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">Toolbar</div>
+    <div class="esquerda">Esquerda 1</div>
+    <div class="esquerda" style="top: 383px">Esquerda 2</div>
+    <div class="centro">Centro 1</div>
+    <div class="centro">Centro 2</div>
+    <div class="centro">Centro 3</div>
+    <div class="centro">Centro 4</div>
+    <div class="centro">Centro 5</div>
+    <div class="centro">Centro 6</div>
+    <div class="direita" style="">Direita 1</div>
+    <div class="direita" style="top: 277px;">Direita 2</div>
+    <div class="direita" style="top: 483px;">Direita 3</div>
+    <div class="rodape">Rodapé</div>
+</body>
