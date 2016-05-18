@@ -4,32 +4,24 @@
  */
 package gui.javafx;
 
-import java.net.URL;
-
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
-import javafx.animation.TranslateTransitionBuilder;
 import javafx.application.Application;
-import javafx.beans.property.BooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.ClipboardContentBuilder;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayerBuilder;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextBuilder;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.media.AudioClip;
 
 public class Animacao extends Application {
 
@@ -58,7 +50,12 @@ public class Animacao extends Application {
         			"de asas, tangida\n" +
         			"pela ventania?");
         
-        final TranslateTransition animacao = TranslateTransitionBuilder.create().duration(new Duration(24000)).node(text).fromY(0).toY(-330).interpolator(Interpolator.EASE_OUT).build();
+        final TranslateTransition animacao = new TranslateTransition(Duration.millis(24000),text);
+        animacao.setFromY(0);
+        animacao.setToY(-330);
+        animacao.setInterpolator(Interpolator.EASE_OUT);
+
+        
 
         Button btn = new Button();
 
@@ -72,7 +69,7 @@ public class Animacao extends Application {
             }
         });
         
-        MediaPlayerBuilder.create().autoPlay(true).media(new Media("http://video.fws.gov/sounds/35indigobunting.mp3")).build();
+        //AudioClip audio = new AudioClip("http://www.fws.gov/video/sounds/40bluemartins.mp3");
         
         root.getChildren().add(view);
         root.getChildren().add(text);
@@ -80,7 +77,8 @@ public class Animacao extends Application {
         
         primaryStage.setScene(scene);
         primaryStage.show();
+        //audio.play();
         animacao.play();
-
+        
     }
 }
