@@ -18,8 +18,8 @@ public class ExemploFXML implements Initializable {
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        System.out.println("Voce clicou no botao!");
-        label.setText("Ola Mundo!");
+        System.out.println("Voce clicou no botão!");
+        label.setText("Olá Mundo!");
     }
     
     public void initialize(URL url, ResourceBundle rb) {

@@ -33,7 +33,7 @@ public class FrmLogin extends Application {
         txtBemVindo.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         grid.add(txtBemVindo, 0, 0, 2, 1);        
         
-        Label lblNome = new Label( "Usu‡rio:");        
+        Label lblNome = new Label( "Usuï¿½rio:");        
         grid.add(lblNome, 0, 1);
         
         TextField txtNome = new TextField();
@@ -58,7 +58,7 @@ public class FrmLogin extends Application {
             public void handle(ActionEvent e) {
             	txtMensagem.setFill(Color.FIREBRICK);
             	txtMensagem.setId( "txtMensagem" );
-            	txtMensagem.setText( "Bot‹o Entrar Pressionado!" );
+            	txtMensagem.setText( "BotÃ£o Entrar Pressionado!" );
             }
         });
         

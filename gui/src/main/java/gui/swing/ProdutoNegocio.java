@@ -22,7 +22,7 @@ public class ProdutoNegocio {
 	
 	public void excluir(Produto p) throws Exception {
 		if (p.getIdProduto()==null) {
-			throw new Exception("Não é possível excluir um produto que não tenha código!");
+			throw new Exception("N√£o √© poss√≠vel excluir um produto que n√£o tenha c√≥digo!");
 		} else {
 			dao.excluir(p);
 		}
@@ -46,13 +46,13 @@ public class ProdutoNegocio {
 			mensagem.append("Nome do produto deve conter pelo menos 5 caracteres!");
 		}
 		if (p.getValor()<0) {
-			mensagem.append("Valor do produto não pode ser negativo!");
+			mensagem.append("Valor do produto n√£o pode ser negativo!");
 		}
 		if (p.getTipo() == null) {
-			mensagem.append("Tipo do produto é de preenchimento obrigatório!");
+			mensagem.append("Tipo do produto √© de preenchimento obrigat√≥rio!");
 		}
 		if (p.getQuantidade()<0) {
-			mensagem.append("Quantidade do produto não pode ser negativa!");
+			mensagem.append("Quantidade do produto n√£o pode ser negativa!");
 		}
 		
 		if (mensagem.length()>0) throw new Exception(mensagem.toString());

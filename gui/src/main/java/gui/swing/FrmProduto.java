@@ -120,7 +120,7 @@ public class FrmProduto extends JFrame{
 
         //ABAS DO CENTRO DO FORMULARIO
         tbpPrincipal.addTab("Consulta",null,scpConsulta,"Realize a consulta dos registros aqui!");
-        tbpPrincipal.addTab("Edicao",null,pnlEditar,"Realize a edicao do registro selecionado aqui!");
+        tbpPrincipal.addTab("Edicao",null,pnlEditar,"Realize a edição do registro selecionado aqui!");
         
         //ADICIONA COMPONENTES NO FRAME
         Container ct = this.getContentPane();
@@ -265,7 +265,7 @@ public class FrmProduto extends JFrame{
 
 	protected void btnPesquisar_actionPerformed(ActionEvent e) {
 		if (isModoEdicao()) {
-			int r = JOptionPane.showConfirmDialog(this, "Voce esta editando um Registro. Deseja cancelar a Edicao?");
+			int r = JOptionPane.showConfirmDialog(this, "Voce está editando um Registro. Deseja cancelar a Edição?");
 			
 			if (r == JOptionPane.YES_OPTION) {
 				btnCancelar.doClick();

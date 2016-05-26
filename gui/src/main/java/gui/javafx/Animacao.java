@@ -31,7 +31,7 @@ public class Animacao extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Exemplo com Som e Animacao");
+        primaryStage.setTitle("Exemplo com Som e Animação");
         Group root = new Group();
         Scene scene = new Scene(root, 500, 375);
         
@@ -45,7 +45,7 @@ public class Animacao extends Application {
         text.setFill(Color.GOLDENROD);
         text.setX(10);
         text.setY(scene.getHeight());
-        text.setText("De que distancia\n"+
+        text.setText("De que distância\n"+
         			"chega essa chuva\n"+
         			"de asas, tangida\n" +
         			"pela ventania?");

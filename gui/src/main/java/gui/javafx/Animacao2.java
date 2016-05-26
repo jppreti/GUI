@@ -21,7 +21,7 @@ public class Animacao2 extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-        stage.setTitle("Exemplo de Transicao");
+        stage.setTitle("Exemplo de Transição");
         Group root = new Group();
         Scene scene = new Scene(root, 500, 375);		
 		

@@ -36,19 +36,19 @@ public class ExemploMain extends Application {
         
         btn.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent arg0) {
-				System.out.println("Botão foi Pressionado!");
+				System.out.println("Bot√£o foi Pressionado!");
 			}
         });
         
         btn.setOnMouseEntered(new EventHandler<MouseEvent>(){
 			public void handle(MouseEvent arg0) {
-				btn.setText("Mouse na área!");
+				btn.setText("Mouse na √Årea!");
 			}
         });
 
         btn.setOnMouseExited(new EventHandler<MouseEvent>(){
 			public void handle(MouseEvent arg0) {
-				btn.setText("Mouse por aí!");
+				btn.setText("Mouse por a√≠!");
 			}
         });
         

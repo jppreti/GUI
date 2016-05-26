@@ -22,7 +22,7 @@ public class ExemploTratamentoEventos extends JFrame {
 		Container ct = this.getContentPane();
 		ct.setLayout(new FlowLayout());
 		
-		btn1 = new JButton("Bot땚 1");
+		btn1 = new JButton("Bot찾o 1");
 		btn1.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				btn1_actionPerformed(e);
@@ -42,7 +42,7 @@ public class ExemploTratamentoEventos extends JFrame {
 			}			
 		});
 		
-		btn2 = new JButton("Bot땚 2");
+		btn2 = new JButton("Bot찾o 2");
 		btn2.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				btn2_actionPerformed(e);
@@ -59,19 +59,19 @@ public class ExemploTratamentoEventos extends JFrame {
 	}
 	
 	protected void btn1_mouseExited(MouseEvent e) {
-		btn1.setText("Bot땚 1");
+		btn1.setText("Bot찾o 1");
 	}
 
 	protected void btn1_mouseEntered(MouseEvent e) {
-		btn1.setText("Mouse na 뇊ea!");
+		btn1.setText("Mouse na 횁rea!");
 	}
 
 	protected void btn2_actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(this, "Bot땚 2 Clicado!");		
+		JOptionPane.showMessageDialog(this, "Bot찾o 2 Clicado!");		
 	}
 
 	protected void btn1_actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(this, "Bot땚 1 Clicado!");
+		JOptionPane.showMessageDialog(this, "Bot찾o 1 Clicado!");
 	}
 
 	public static void main(String[] args) {
