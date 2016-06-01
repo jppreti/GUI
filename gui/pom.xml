@@ -29,7 +29,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>gui.javafx.ControlandoMovimento</mainClass>
+					<mainClass>gui.javafx.TesteFXML</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
