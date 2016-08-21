@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        
+        function validatePasswd() {
+        
+            var txtPasswd = document.getElementById("txtPasswd");
+            var msgPasswd = document.getElementById("msgPasswd");
+            
+            if (txtPasswd.value.length<6) {
+                msgPasswd.style.color = "red";
+                txtPasswd.style.border = "2px solid red";
+                msgPasswd.innerHTML = "Invalid Password!";
+            } else {
+                txtPasswd.style.border = "1px solid black";
+                var count = 0;
+                if (new RegExp("[a-z]").exec(txtPasswd.value) != null) count++;
+                if (new RegExp("[A-Z]").exec(txtPasswd.value) != null) count++;
+                if (new RegExp("[0-9]").exec(txtPasswd.value) != null) count++;   
+                
+                if (count<=3) {
+                    msgPasswd.innerHTML = "Strong Password!";
+                    msgPasswd.style.color = "green";
+                }
+                
+                if (contador<=2) {
+                    msgPasswd.innerHTML = "Regular Password!";
+                    msgPasswd.style.color = "orange";
+                }
+                
+                if (contador<=1) {
+                    msgPasswd.innerHTML = "Weak Password!";
+                    msgPasswd.style.color = "red";
+                }
+            }
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <input type="text" style="border: 1px solid black;" id="txtPasswd" onkeyup="validatePasswd();" />
+    <span id="msgPasswd" style="color:red;"></span>
+</body>

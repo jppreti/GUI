@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        fieldset input {
+            position: absolute;
+            left: 90px;
+        }
+    </style>
+    <script>
+        function insert() {
+            var table = document.getElementById("tblPerson");
+            var txtName = document.getElementById("txtName");
+            var txtAddress = document.getElementById("txtAddress");
+            var txtCity = document.getElementById("txtCity");
+            
+            var row = table.insertRow(1);
+            
+            var colExc = '<td><input type="button" value="Delete" onclick="deleteRow(this.parentNode.parentNode.rowIndex)"></td>';
+            
+            row.innerHTML = "<td>"+txtName.value+"</td> <td>"+txtAddress.value+"</td><td>"+txtCity.value+"</td><td>"+new Date().toDateString()+"</td>" + colExc;
+            
+            txtName.value = "";
+            txtAddress.value = "";
+            txtCity.value = "";
+            
+            txtName.focus();
+        }
+        
+        function deleteRow(i){
+            document.getElementById('tblPerson').deleteRow(i);
+        }
+    </script>
+</head>
+<body>
+    <fieldset style="max-width: 300px;">
+        <legend>User Registration</legend>
+        <label>Name:</label><input type="text" id="txtName" /><br/>
+        <label>Address:</label><input type="text" id="txtAddress" /><br/>
+        <label>City:</label><input type="text" id="txtCity" /><br/>
+        <button onclick="insert()">Add</button>
+    </fieldset>
+    
+    <table id="tblPerson">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Registration Date</th>
+            <th>Delete</th>
+        </tr>
+    </table>
+</body>
+

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <head>
     <script type="text/javascript">
-        function transferir() {
-            var opcao = document.getElementById("txtOpcao").value;
-            var select = document.getElementById("slcOpcao");
+        function transfer() {
+            var txtOption = document.getElementById("txtOption").value;
+            var select = document.getElementById("slcOption");
             var option = document.createElement("option");
-            option.value = opcao;
-            option.text = opcao;
+            option.value = txtOption;
+            option.text = txtOption;
             select.appendChild(option);
         }
     </script>
 </head>
 <body>
-    <input type="text" id="txtOpcao" />
-    <input type="button" value="+" onclick="transferir()" />
-    <select id="slcOpcao">
+    <input type="text" id="txtOption" />
+    <input type="button" value="+" onclick="transfer()" />
+    <select id="slcOption">
     </select>
 </body>
