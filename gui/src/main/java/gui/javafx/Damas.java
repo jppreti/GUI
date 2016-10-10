@@ -214,6 +214,7 @@ class Peca extends Circle {
 	protected void onMouseReleased(MouseEvent event) {
 		x = (int) event.getSceneX();
 		y = (int) event.getSceneY();
+		System.out.println(x+","+y);
 		updateIJ();
 		updateXY();
 	}	
