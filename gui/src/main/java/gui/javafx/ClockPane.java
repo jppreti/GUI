@@ -115,6 +115,11 @@ public class ClockPane extends Pane implements Runnable {
       Math.cos(second * (2 * Math.PI / 60));
     Line sLine = new Line(centerX, centerY, secondX, secondY);
     sLine.setStroke(Color.RED);
+    /*
+     * Poderia utilizar o Rotate, posicionando todos os ponteiros do relógio na hora 12:00 e rotacionando em graus.
+     * sLine.getTransforms().add(new Rotate(360/60 * second,centerX,centerY));
+     */
+    
 
     // Draw minute hand
     double mLength = clockRadius * 0.65;
@@ -155,5 +160,3 @@ public class ClockPane extends Pane implements Runnable {
 	}				
   }
 }
-
-
