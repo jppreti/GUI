@@ -22,7 +22,9 @@ public class ClockPane extends Pane implements Runnable {
   /** Construct a default clock with the current time*/
   public ClockPane() {
     setCurrentTime();
-    new Thread(this).start();
+    Thread t = new Thread(this);
+    t.setDaemon(true);
+    t.start();
   }
 
   /** Construct a clock with specified hour, minute, and second */
