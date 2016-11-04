@@ -7,14 +7,11 @@ import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.CubicCurveTo;
-import javafx.scene.shape.MoveTo;
-import javafx.scene.shape.Path;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Animacao2 extends Application {
+public class Animacao0 extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
@@ -22,7 +19,7 @@ public class Animacao2 extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-        stage.setTitle("Exemplo de Transição");
+        stage.setTitle("Exemplo de Transição HLine");
         Group root = new Group();
         Scene scene = new Scene(root, 500, 375);		
 		
@@ -33,15 +30,17 @@ public class Animacao2 extends Application {
 
 		Path path = new Path(); 
 		path.getElements().add(new MoveTo(20,20)); 
-		path.getElements().add(new CubicCurveTo(380, 0, 380, 120, 200, 120));
-		path.getElements().add(new CubicCurveTo(0, 120, 0, 240, 380, 240)); 
+		path.getElements().add(new HLineTo(400));
+		path.getElements().add(new VLineTo(100));
+		path.getElements().add(new HLineTo(20));
+		path.getElements().add(new VLineTo(20));
+
 		PathTransition pathTransition = new PathTransition(); 
-		pathTransition.setDuration(Duration.millis(4000)); 
+		pathTransition.setDuration(Duration.millis(4000));
 		pathTransition.setPath(path); 
-		pathTransition.setNode(rectPath); 
-		pathTransition.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
-		pathTransition.setCycleCount(Timeline.INDEFINITE); 
-		pathTransition.setAutoReverse(true);
+		pathTransition.setNode(rectPath);
+		pathTransition.setCycleCount(Timeline.INDEFINITE);
+		pathTransition.setAutoReverse(false);
 
 		
         root.getChildren().add(rectPath);
