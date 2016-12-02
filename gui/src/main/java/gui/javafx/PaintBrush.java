@@ -28,17 +28,17 @@ public class PaintBrush extends Application {
         tela.getChildren().add(poly);
 
         scene.setOnMouseDragged(e -> {
-            tela.getChildren().add(new Circle(e.getX(),e.getY(),4,new Color(Math.random(),Math.random(),Math.random(),1)));
-            //poly.getPoints().addAll(new Double[]{e.getX(), e.getY()});
+            //tela.getChildren().add(new Circle(e.getX(),e.getY(),4,new Color(Math.random(),Math.random(),Math.random(),1)));
+            poly.getPoints().addAll(new Double[]{e.getX(), e.getY()});
         });
 
         scene.setOnMouseReleased(e->{
             poly = new Polyline();
-            //DropShadow ds = new DropShadow();
-            //ds.setOffsetY(3.0);
-            //ds.setOffsetX(3.0);
-            //ds.setColor(Color.BLUE);
-            //poly.setEffect(ds);
+            DropShadow ds = new DropShadow();
+            ds.setOffsetY(3.0);
+            ds.setOffsetX(3.0);
+            ds.setColor(Color.BLUE);
+            poly.setEffect(ds);
             poly.setStrokeWidth(Math.random()*10);
             tela.getChildren().add(poly);
         });
