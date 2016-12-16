@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane fx:id="bdpPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.javafx.FrmProduto">
+   <top>
+      <FlowPane fx:id="flpNorte" alignment="CENTER" hgap="10.0" maxHeight="70.0" minHeight="30.0" prefHeight="50.0" prefWidth="200.0" vgap="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblPalavraChave" text="Palavra-chave:" />
+            <TextField fx:id="txtPalavraChave" onKeyPressed="#txtPalavraChave_onKeyPressed" promptText="Digite a palavra a ser buscada" />
+            <Label fx:id="lblBuscaPor" text="Busca por:" />
+            <ChoiceBox fx:id="chbBuscaPor" prefWidth="150.0" />
+            <Button fx:id="btnPesquisar" onAction="#btnPesquisar_onAction" text="_Pesquisar">
+               <tooltip>
+                  <Tooltip text="Busca produtos pela palavra chave no campo escolhido por Busca por." />
+               </tooltip>
+            </Button>
+         </children>
+      </FlowPane>
+   </top>
+   <bottom>
+      <HBox fx:id="hboSul" alignment="CENTER" maxHeight="70.0" minHeight="30.0" prefHeight="50.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnNovo" onAction="#btnNovo_onAction" prefWidth="80.0" text="_Novo">
+               <tooltip>
+                  <Tooltip text="Cadastra um novo produto." />
+               </tooltip>
+            </Button>
+            <Button fx:id="btnConfirmar" onAction="#btnConfirmar_onAction" prefWidth="80.0" text="C_onfirmar">
+               <tooltip>
+                  <Tooltip text="Confirma a operação de Inclusão ou Alteração de um Produto." />
+               </tooltip>
+            </Button>
+            <Button fx:id="btnAlterar" onAction="#btnAlterar_onAction" prefWidth="80.0" text="_Alterar">
+               <tooltip>
+                  <Tooltip text="Altera os dados de um Produto selecionado na tabela." />
+               </tooltip>
+            </Button>
+            <Button fx:id="btnCancelar" onAction="#btnCancelar_onAction" prefWidth="80.0" text="_Cancelar">
+               <tooltip>
+                  <Tooltip text="Cancela a operação de Inclusão ou Alteração em andamento." />
+               </tooltip>
+            </Button>
+            <Button fx:id="btnExcluir" onAction="#btnExcluir_onAction" prefWidth="80.0" text="E_xcluir">
+               <tooltip>
+                  <Tooltip text="Exclui definitivamente o produto selecionado na tabela." />
+               </tooltip>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <TabPane fx:id="tbpCentral" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="tabProdutos" text="Produtos">
+               <content>
+                  <TableView fx:id="tblProdutos" prefHeight="200.0" prefWidth="200.0">
+                     <contextMenu>
+                        <ContextMenu fx:id="ctxMenu">
+                          <items>
+                            <MenuItem fx:id="mniAlterar" mnemonicParsing="false" onAction="#mniAlterar_onAction" text="Alterar" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem fx:id="mniExcluir" mnemonicParsing="false" onAction="#mniExcluir_onAction" text="Excluir" />
+                          </items>
+                        </ContextMenu>
+                     </contextMenu>
+                  </TableView>
+               </content>
+          </Tab>
+          <Tab fx:id="tabEdicao" onSelectionChanged="#tabEdicao_onSelectionChanged" text="Edição">
+               <content>
+                  <GridPane fx:id="grdEdicao" hgap="10.0" maxHeight="300.0" maxWidth="400.0" minHeight="150.0" minWidth="200.0" prefHeight="150.0" prefWidth="250.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="lblCodigo" text="Código:" />
+                        <Label fx:id="lblNome" text="Nome:" GridPane.rowIndex="1" />
+                        <Label fx:id="lblValorUnitario" text="Valor Unitário:" GridPane.rowIndex="2" />
+                        <Label fx:id="lblQtdeEstoque" text="Qtde em Estoque:" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtCodigo" editable="false" maxWidth="50.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="txtNome" maxWidth="300.0" promptText="Nome do produto" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtValorUnitario" maxWidth="100.0" promptText="Valor unitário do produto" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtQtdeEstoque" maxWidth="50.0" promptText="Qtde em estoque do produto" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </GridPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

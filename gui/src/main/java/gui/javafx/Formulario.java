@@ -32,6 +32,8 @@ import javafx.scene.control.TableColumnBuilder;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -65,7 +67,11 @@ public class Formulario extends Application {
         chbOpcao = new ChoiceBox<String>();
         chbOpcao.getItems().addAll("Nome", "Tipo");
         chbOpcao.getSelectionModel().selectFirst();
-        btnPesquisar = new Button("Pesquisar");
+
+        btnPesquisar = new Button();
+        btnPesquisar.setPadding(new Insets(1));
+        Image img = new Image(getClass().getResourceAsStream("search.png"));
+        btnPesquisar.setGraphic(new ImageView(img));
         
         pnlHorizontal = new HBox(5); //Espaco de 5 px
         pnlHorizontal.getChildren().addAll(lblPalavraChave, txtPalavraChave, lblOpcao, chbOpcao, btnPesquisar);
@@ -77,8 +83,10 @@ public class Formulario extends Application {
         		new Produto("Detergente","Limpeza",5),
         		new Produto("Refrigerante","Bebida",3)
         );
-        
-        TableColumn tbcNome = TableColumnBuilder.create().text("Nome").cellValueFactory(new PropertyValueFactory("nome")).build();
+
+        TableColumn tbcNome = new TableColumn("Nome");
+        tbcNome.setCellValueFactory(new PropertyValueFactory<Produto,String>("nome"));
+        //TableColumn tbcNome = TableColumnBuilder.create().text("Nome").cellValueFactory(new PropertyValueFactory("nome")).build();
         TableColumn tbcTipo = TableColumnBuilder.create().text("Tipo").cellValueFactory(new PropertyValueFactory("tipo")).build();
         TableColumn tbcValor = TableColumnBuilder.create().text("Valor").cellValueFactory(new PropertyValueFactory("valor")).build();
         
@@ -88,7 +96,14 @@ public class Formulario extends Application {
         tbl.getColumns().addAll(tbcNome, tbcTipo, tbcValor);
         
         //final TranslateTransition animacao = TranslateTransitionBuilder.create().duration(new Duration(24000)).node(text).fromY(0).toY(-330).interpolator(Interpolator.EASE_OUT).build();
-        animacaoFade = FadeTransitionBuilder.create().duration(new Duration(1000)).node(tbl).fromValue(1).toValue(0).autoReverse(true).cycleCount(2).build();
+
+        //animacaoFade = FadeTransitionBuilder.create().duration(new Duration(1000)).node(tbl).fromValue(1).toValue(0).autoReverse(true).cycleCount(2).build();
+        animacaoFade = new FadeTransition(Duration.millis(1000),tbl);
+        animacaoFade.setFromValue(1);
+        animacaoFade.setToValue(0);
+        animacaoFade.setAutoReverse(true);
+        animacaoFade.setCycleCount(2);
+
         animacaoScale = ScaleTransitionBuilder.create().duration(new Duration(1000)).node(tbl).toX(0).toY(0).autoReverse(true).cycleCount(2).build();
         
         btnPesquisar.setOnAction(new EventHandler<ActionEvent>() {
