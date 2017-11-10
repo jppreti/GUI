@@ -2,17 +2,17 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8" />
-            <title>Declaração de Matrícula</title>
-            <script src="https://cdn.rawgit.com/jppreti/GUI/master/qrcode.js"></script>
-            <script>
-                function diaExtenso() {
-                    meses = new Array("Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro");
-                    hoje = new Date();
-                    dia = hoje.getDate();
-                    mes = hoje.getMonth();
-                    return dia + " de " + meses[mes];
-                }
-            </script>
+        <title>Declaração de Matrícula</title>
+        <script src="https://cdn.rawgit.com/jppreti/GUI/master/qrcode.js"></script>
+        <script>
+            function diaExtenso() {
+                meses = new Array("Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro");
+                hoje = new Date();
+                dia = hoje.getDate();
+                mes = hoje.getMonth();
+                return dia + " de " + meses[mes];
+            }
+        </script>
     </head>
     <body>
         <div class="separator" style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="https://3.bp.blogspot.com/-AR9Gw70QTRI/WgTledshm9I/AAAAAAAAAEk/PvDS_U1HL1M0FvdfUYj7baXayS154qBvQCLcBGAs/s1600/logoIFMT.png"><img src="https://3.bp.blogspot.com/-AR9Gw70QTRI/WgTledshm9I/AAAAAAAAAEk/PvDS_U1HL1M0FvdfUYj7baXayS154qBvQCLcBGAs/s1600/logoIFMT.png" alt="" width="336" height="112" border="0" data-original-width="896" data-original-height="300" /></a></div>
@@ -27,21 +27,7 @@
         <p style="text-align: center;font-size:14pt;">João Paulo Delgado Preti<br/><span style="font-style:italic;font-size:12pt;">Coordenador do Curso<br />Departamento da Área de Informática</span></p>
         <br />
         <p style="text-align:justify; font-family: courier;font-size:10pt;">Esta declaração pode ser verificada em <a href="https://redescbaifmt.blogspot.com.br/p/declaracao-matricula.html" style="font-weight:bold;">https://redescbaifmt.blogspot.com.br/p/declaracao-matricula.html</a> informando o CPF do estudante.</p>
-        <center><div id="qrcode"></div></center>
-        <script>
-            //new QRCode(document.getElementById("qrcode"), "https://redescbaifmt.blogspot.com.br/p/declaracao-matricula.html");
-            new QRCode(document.getElementById("qrcode"), {
-                                    text: "http://redescbaifmt.blogspot.com.br/p/declaracao-matricula.html",
-                                    width: 128,
-                                    height: 128,
-                                    colorDark : "#000000",
-                                    colorLight : "#ffffff",
-                                    correctLevel : QRCode.CorrectLevel.H
-                                    });
-        </script>
-        <br />
-        <hr />
-        <p style="text-align:center;font-size:12pt;">Instituto Federal de Educação, Ciência e Tecnologia de Mato Grosso - Campus Cuiabá Cel. Octayde Jorge da Silva<br />Rua Profa. Zulmira Canavarros, 95 - CEP: 78005-200<br />Telefone: (65) 3318-1403<br/>Cuiabá/MT</p>
+        
         <script>
             var url = window.location.href;
             url = decodeURI(url);//para retirar os %20 e outros códigos de entidade
@@ -50,10 +36,27 @@
             var nome = paramList[0].split("=")[1];
             var matricula = paramList[1].split("=")[1];
             var periodo = paramList[2].split("=")[1];
+            var cpf = paramList[3].split("=")[1];
             
             document.getElementById("nome").innerHTML=nome;
             document.getElementById("matricula").innerHTML=matricula;
             document.getElementById("periodo").innerHTML=periodo;
         </script>
+        
+        <center><div id="qrcode"></div></center>
+        <script>
+            //new QRCode(document.getElementById("qrcode"), "https://redescbaifmt.blogspot.com.br/p/declaracao-matricula.html");
+            new QRCode(document.getElementById("qrcode"), {
+                       text: "http://redescbaifmt.blogspot.com.br/p/declaracao-matricula.html?cpf="+cpf,
+                       width: 128,
+                       height: 128,
+                       colorDark : "#000000",
+                       colorLight : "#ffffff",
+                       correctLevel : QRCode.CorrectLevel.H
+                       });
+            </script>
+        <br />
+        <hr />
+        <p style="text-align:center;font-size:10pt;">Instituto Federal de Educação, Ciência e Tecnologia de Mato Grosso - Campus Cuiabá Cel. Octayde Jorge da Silva<br />Rua Profa. Zulmira Canavarros, 95 - CEP: 78005-200<br />Telefone: (65) 3318-1403<br/>Cuiabá/MT</p>
     </body>
-
+    
