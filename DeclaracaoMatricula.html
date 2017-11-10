@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="utf-8">
-  <title>Declaração de Matrícula</title>
-  <script>
-  meses = new Array("Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro");
-  var url = window.location.href;
-  url = decodeURI(url);//para retirar os %20 e outros códigos de entidade
-  var params = url.split("?")[1];
-  var paramList = params.split("&");
-  var nome = paramList[0].split("=")[1];
-  var matricula = paramList[1].split("=")[1];
-  var periodo = paramList[2].split("=")[1];
+    <head>
+        <meta charset="utf-8" />
+            <title>Declaração de Matrícula</title>
+            <script src="https://cdn.rawgit.com/jppreti/GUI/master/qrcode.js"></script>
+            <script>
+                function diaExtenso() {
+                    meses = new Array("Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro");
+                    hoje = new Date();
+                    dia = hoje.getDate();
+                    mes = hoje.getMonth();
+                    return dia + " de " + meses[mes];
+                }
+            </script>
+    </head>
+    <body>
+        <div class="separator" style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="https://3.bp.blogspot.com/-AR9Gw70QTRI/WgTledshm9I/AAAAAAAAAEk/PvDS_U1HL1M0FvdfUYj7baXayS154qBvQCLcBGAs/s1600/logoIFMT.png"><img src="https://3.bp.blogspot.com/-AR9Gw70QTRI/WgTledshm9I/AAAAAAAAAEk/PvDS_U1HL1M0FvdfUYj7baXayS154qBvQCLcBGAs/s1600/logoIFMT.png" alt="" width="336" height="112" border="0" data-original-width="896" data-original-height="300" /></a></div>
+        <hr />
+        <p>&nbsp;</p>
+        <h1 style="text-align:center;">Declaração de Matrícula</h1>
+        <p>&nbsp;</p>
+        <p style="text-align: justify;font-size:14pt;">Declaramos para os devidos fins que o(a) aluno(a) <span id="nome" style="text-transform:uppercase;font-weight:bold;"></span>, matr&iacute;cula <span style="font-weight:bold;" id="matricula"></span> encontra-se regularmente matriculado no Instituto Federal de Mato Grosso (IFMT) - Campus Cuiab&aacute;, no per&iacute;odo <span id="periodo" style="text-transform:uppercase;font-weight:bold;"></span> do Curso Superior de Tecnologia em <span style="font-weight:bold;">REDES DE COMPUTADORES</span>.</p>
+        <p>&nbsp;</p>
+        <p style="text-align: right;font-size:14pt;">Cuiab&aacute;, <script>document.write(diaExtenso());</script> de 2017.</p>
+        <br /><br />
+        <p style="text-align: center;font-size:14pt;">João Paulo Delgado Preti<br/><span style="font-style:italic;font-size:12pt;">Coordenador do Curso<br />Departamento da Área de Informática</span></p>
+        <br />
+        <p style="text-align:justify; font-family: courier;font-size:10pt;">Esta declaração pode ser verificada em <a href="http://blogspot.com.br/p/declaracao-de-matricula.html" style="font-weight:bold;">http://blogspot.com.br/p/declaracao-de-matricula.html</a> informando o CPF do estudante.</p>
+        <center><div id="qrcode"></div></center>
+        <script>
+            //new QRCode(document.getElementById("qrcode"), "http://redescbaifmt.blogspot.com.br/p/declaracao-matricula.html");
+            new QRCode(document.getElementById("qrcode"), {
+                                    text: "http://redescbaifmt.blogspot.com.br/p/declaracao-matricula.html",
+                                    width: 128,
+                                    height: 128,
+                                    colorDark : "#000000",
+                                    colorLight : "#ffffff",
+                                    correctLevel : QRCode.CorrectLevel.H
+                                    });
+        </script>
+        <br />
+        <hr />
+        <p style="text-align:center;font-size:12pt;">Instituto Federal de Educação, Ciência e Tecnologia de Mato Grosso - Campus Cuiabá Cel. Octayde Jorge da Silva<br />Rua Profa. Zulmira Canavarros, 95 - CEP: 78005-200<br />Telefone: (65) 3318-1403<br/>Cuiabá/MT</p>
+        <script>
+            var url = window.location.href;
+            url = decodeURI(url);//para retirar os %20 e outros códigos de entidade
+            var params = url.split("?")[1];
+            var paramList = params.split("&");
+            var nome = paramList[0].split("=")[1];
+            var matricula = paramList[1].split("=")[1];
+            var periodo = paramList[2].split("=")[1];
+            
+            document.getElementById("nome").innerHTML=nome;
+            document.getElementById("matricula").innerHTML=matricula;
+            document.getElementById("periodo").innerHTML=periodo;
+        </script>
+    </body>
 
-  function diaExtenso() {
-    hoje = new Date();
-	dia = hoje.getDate();
-	mes = hoje.getMonth();
-	return dia + " de " + meses[mes];
-  }
-</script>
-</head>
-<body>
-<div class="separator" style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="https://3.bp.blogspot.com/-AR9Gw70QTRI/WgTledshm9I/AAAAAAAAAEk/PvDS_U1HL1M0FvdfUYj7baXayS154qBvQCLcBGAs/s1600/logoIFMT.png"><img src="https://3.bp.blogspot.com/-AR9Gw70QTRI/WgTledshm9I/AAAAAAAAAEk/PvDS_U1HL1M0FvdfUYj7baXayS154qBvQCLcBGAs/s1600/logoIFMT.png" alt="" width="336" height="112" border="0" data-original-width="896" data-original-height="300" /></a></div>
-<hr />
-<p>&nbsp;</p>
-<h1 style="text-align:center;">Declaração de Matrícula</h1>
-<p>&nbsp;</p>
-<p style="text-align: justify;font-size:14pt;">Declaramos para os devidos fins que o(a) aluno(a) <span id="nome" style="text-transform:uppercase;font-weight:bold;"></span>, matr&iacute;cula <span style="font-weight:bold;" id="matricula"></span> encontra-se regularmente matriculado no Instituto Federal de Mato Grosso (IFMT) - Campus Cuiab&aacute;, no per&iacute;odo <span id="periodo" style="text-transform:uppercase;font-weight:bold;"></span> do Curso Superior de Tecnologia em <span style="font-weight:bold;">REDES DE COMPUTADORES</span>.</p>
-<p>&nbsp;</p>
-<p style="text-align: right;font-size:14pt;">Cuiab&aacute;, <script>document.write(diaExtenso());</script> de 2017.</p>
-<br /><br />
-<p style="text-align: center;font-size:14pt;">João Paulo Delgado Preti<br/><span style="font-style:italic;font-size:12pt;">Coordenador do Curso<br />Departamento da Área de Informática</span></p>
-<br />
-<p style="text-align:justify; font-family: courier;font-size:10pt;">Esta declaração pode ser verificada em <a href="http://blogspot.com.br/p/declaracao-de-matricula.html" style="font-weight:bold;">http://blogspot.com.br/p/declaracao-de-matricula.html</a> informando o CPF do estudante.</p>
-
-<br /><br />
-<hr />
-<p style="text-align:center;font-size:12pt;">Instituto Federal de Educação, Ciência e Tecnologia de Mato Grosso - Campus Cuiabá Cel. Octayde Jorge da Silva<br />Rua Profa. Zulmira Canavarros, 95 - CEP: 78005-200<br />Telefone: (65) 3318-1403<br/>Cuiabá/MT</p>
-<script>
-  document.getElementById("nome").innerHTML=nome;
-  document.getElementById("matricula").innerHTML=matricula;
-  document.getElementById("periodo").innerHTML=periodo;
-</script>
-</body>
